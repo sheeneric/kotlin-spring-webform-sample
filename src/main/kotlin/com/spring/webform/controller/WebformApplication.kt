@@ -1,4 +1,4 @@
-package com.spring.webform
+package com.spring.webform.controller
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
