@@ -16,20 +16,22 @@
 <form action="/action_page.php">
     <label for="Variables">Choose instructions:</label>
     <select name="Variables" id="Variables">
-        <option value="ADD">ADD</option>
-        <option value="ARG">ARG</option>
-        <option value="COPY">COPY</option>
-        <option value="ENV">ENV</option>
-        <option value="FROM">FROM</option>
-        <option value="LABEL">LABEL</option>
-        <option value="ONBUILD">ONBUILD</option>
-        <option value="RUN">RUN</option>
-        <option value="VOLUME">VOLUME</option>
-        <option value="WORKDIR">WORKDIR</option>
+        <option id="ADD">ADD</option>
+        <option id="ARG">ARG</option>
+        <option id="COPY">COPY</option>
+        <option id="ENV">ENV</option>
+        <option id="FROM">FROM</option>
+        <option id="LABEL">LABEL</option>
+        <option id="ONBUILD">ONBUILD</option>
+        <option id="RUN">RUN</option>
+        <option id="VOLUME">VOLUME</option>
+        <option id="WORKDIR">WORKDIR</option>
     </select>
     <br><br>
     <input type="submit" value="Submit">
 </form>
+
+<!--var x = document.getElementById("mySelect").options.length;-->
 
 </body>
 </html>
