@@ -12,26 +12,35 @@
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 </form>
 
+<script>
+    function selection() {
+    if (Variables.value == 'ARG') {
+        document.write("My message");
+    }
 
-<form action="/action_page.php">
+    if (Variables.value == 'ADD') {
+        alert("2");
+    }
+}
+</script>
+
+<form action="#">
     <label for="Variables">Choose instructions:</label>
-    <select name="Variables" id="Variables">
-        <option id="ADD">ADD</option>
-        <option id="ARG">ARG</option>
-        <option id="COPY">COPY</option>
-        <option id="ENV">ENV</option>
-        <option id="FROM">FROM</option>
-        <option id="LABEL">LABEL</option>
-        <option id="ONBUILD">ONBUILD</option>
-        <option id="RUN">RUN</option>
-        <option id="VOLUME">VOLUME</option>
-        <option id="WORKDIR">WORKDIR</option>
+    <select name="Variables" id="Variables" onchange="selection()">
+        <option value="ADD">ADD</option>
+        <option value="ARG">ARG</option>
+        <option value="COPY">COPY</option>
+        <option value="ENV">ENV</option>
+        <option value="FROM">FROM</option>
+        <option value="LABEL">LABEL</option>
+        <option value="ONBUILD">ONBUILD</option>
+        <option value="RUN">RUN</option>
+        <option value="VOLUME">VOLUME</option>
+        <option value="WORKDIR">WORKDIR</option>
     </select>
     <br><br>
     <input type="submit" value="Submit">
 </form>
-
-<!--var x = document.getElementById("mySelect").options.length;-->
 
 </body>
 </html>
