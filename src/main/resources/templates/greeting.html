@@ -1,31 +1,47 @@
 <!DOCTYPE HTML>
 <html xmlns:th="https://www.thymeleaf.org">
+<script>
+    function selection() {
+    if (Variables.value == 'ARG') {
+        document.getElementById("description").innerHTML = "The ARG instruction defines a variable that users can pass at build-time to the builder with the docker build";
+    }
+    if (Variables.value == 'ADD') {
+        document.getElementById("description").innerHTML = "The ADD instruction copies new files, directories or remote file URLs from <src> and adds them to the filesystem of the image at the path <dest>.";
+    }
+    if (Variables.value == 'COPY') {
+        document.getElementById("description").innerHTML = "copies new files or directories from <src> and adds them to the filesystem of the container at the path <dest>";
+    }
+    if (Variables.value == 'ENV') {
+        document.getElementById("description").innerHTML = "ENV instruction sets the environment variable <key> to the value <value>";
+    }
+    if (Variables.value == 'FROM') {
+        document.getElementById("description").innerHTML = "FROM instruction initializes a new build stage and sets the Base Image for subsequent instructions";
+    }
+    if (Variables.value == 'LABEL') {
+        document.getElementById("description").innerHTML = "The LABEL instruction adds metadata to an image.";
+    }
+    if (Variables.value == 'ONBUILD') {
+        document.getElementById("description").innerHTML = "The ONBUILD instruction adds to the image a trigger instruction to be executed at a later time, when the image is used as the base for another build.";
+    }
+    if (Variables.value == 'RUN') {
+        document.getElementById("description").innerHTML = "Executes command";
+    }
+    if (Variables.value == 'VOLUME') {
+        document.getElementById("description").innerHTML = "The VOLUME instruction creates a mount point with the specified name";
+    }
+    if (Variables.value == 'WORKDIR') {
+        document.getElementById("description").innerHTML = "The WORKDIR instruction sets the working directory for any RUN, CMD, ENTRYPOINT, COPY and ADD instructions that follow it in the Dockerfile";
+    }
+}
+</script>
+
 <head>
-    <title>Getting Started: Handling Form Submission</title>
+    <title>Dockerfile</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
 <h1>Form</h1>
 <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
-    <p>Id: <input type="text" th:field="*{id}" /></p>
-    <p>Message: <input type="text" th:field="*{content}" /></p>
-    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-</form>
-
-<script>
-    function selection() {
-    if (Variables.value == 'ARG') {
-        document.write("My message");
-    }
-
-    if (Variables.value == 'ADD') {
-        alert("2");
-    }
-}
-</script>
-
-<form action="#">
-    <label for="Variables">Choose instructions:</label>
     <select name="Variables" id="Variables" onchange="selection()">
         <option value="ADD">ADD</option>
         <option value="ARG">ARG</option>
@@ -38,6 +54,15 @@
         <option value="VOLUME">VOLUME</option>
         <option value="WORKDIR">WORKDIR</option>
     </select>
+    <p>Id: <input type="text" th:field="*{id}" /></p>
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+
+
+
+<form action="#">
+    <label for="Variables" id="description">Choose instructions:</label>
+    <p></p>
     <br><br>
     <input type="submit" value="Submit">
 </form>
